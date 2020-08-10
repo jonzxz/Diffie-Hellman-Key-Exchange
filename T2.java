@@ -34,6 +34,7 @@ public class T2 {
 		}
 
 		// h and g
+		// repeat generating h until 2 < h < p-2
 		while (!isHQualified) {
 			// 1 - 100 bits
 			h = new BigInteger(rnd.nextInt(100)+1, rnd);
@@ -50,6 +51,8 @@ public class T2 {
 		System.out.printf("H: %s\n", h.toString());
 		System.out.printf("G: %s\n", g.toString());
 
+		// a
+		// repeat generating a until 1 < a < q-1
 		while (!isAQualified) {
 			a = new BigInteger(rnd.nextInt(100)+1, rnd);
 			if (a.compareTo(BigInteger.ONE) == 1 && a.compareTo(q.subtract(BigInteger.ONE)) == -1) {
@@ -57,6 +60,8 @@ public class T2 {
 			}
 		}
 
+		// b
+		// repeat generating b until 1 < b < q-1
 		while (!isBQualified) {
 			b = new BigInteger(rnd.nextInt(100)+1, rnd);
 			if (b.compareTo(BigInteger.ONE) == 1 && b.compareTo(q.subtract(BigInteger.ONE)) == -1) {
