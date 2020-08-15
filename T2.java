@@ -80,8 +80,10 @@ public class T2 {
 		System.out.println("---------------------------------------");
 		System.out.println("Alice will calculate the Diffie-Hellman key as follows: y_B^a = (g^b mod p)^a mod p = g^ab mod p");
 		BigInteger sA = yA.modPow(b, p);
+		System.out.printf("Alice: %s^%s mod %s\n\n", yA.toString(), b.toString(), p.toString());
 		System.out.println("Bob will calculate Diffie-Hellman key as follows      : y_A^b = (g^a mod p)^b mod p = g^ba mod p");
 		BigInteger sB = yB.modPow(a, p);
+		System.out.printf("Bob: %s^%s mod %s\n\n", yB.toString(), a.toString(), p.toString());
 
 		System.out.println("Alice's yB^a: " + sA.toString());
 		System.out.println("Bob's yA^b  : " + sB.toString());
